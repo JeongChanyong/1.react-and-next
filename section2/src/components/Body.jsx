@@ -1,4 +1,4 @@
-export default function Body() {
+const Body = () => {
   return (
     <>
       <div>
@@ -6,4 +6,5 @@ export default function Body() {
       </div>
     </>
   );
-}
+};
+export default Body;
