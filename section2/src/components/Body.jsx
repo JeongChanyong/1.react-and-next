@@ -32,6 +32,9 @@ const Body = () => {
   //     bio: e.target.value,
   //   });
   // };
+
+  // local 저장소 변경 이거 반영 됨?
+  // 안되는건가?
   const onChange = (e) => {
     setState({
       ...state,
