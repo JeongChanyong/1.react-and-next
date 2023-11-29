@@ -1,0 +1,23 @@
+body {
+  padding: 20px;
+}
+
+/*
+margin : 0 auto 
+0 : 위 아래의 margin 값
+auto : 옆은 중앙에 설정
+*/
+.App {
+  margin: 0 auto;
+  width: 400px;
+}
+/*
+.App className 아래에 section tag 
+*/
+.App > section {
+  background-color: rgb(245, 245, 245);
+  border: 1px solid rgb(240, 240, 240);
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 10px;
+}

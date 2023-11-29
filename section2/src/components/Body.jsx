@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import './Body.css';
 
 const Body = () => {
@@ -32,9 +32,6 @@ const Body = () => {
   //     bio: e.target.value,
   //   });
   // };
-
-  // local 저장소 변경 이거 반영 됨?
-  // 안되는건가?
   const onChange = (e) => {
     setState({
       ...state,
@@ -42,11 +39,27 @@ const Body = () => {
     });
   };
 
+  const nameRef = useRef();
+
+  const onSubmit = () => {
+    if (state.name === '') {
+      nameRef.current.focus();
+      return;
+    }
+    console.log(state);
+    alert(`${state.name}님 회원 가입을 축하합니다!`);
+  };
+
   // 테스트
   return (
     <div className="body">
       <div>
-        <input name={'name'} value={state.name} onChange={onChange} />
+        <input
+          name={'name'}
+          value={state.name}
+          onChange={onChange}
+          ref={nameRef}
+        />
       </div>
       <div>
         <select name={'gender'} value={state.select} onChange={onChange}>
@@ -57,6 +70,9 @@ const Body = () => {
       </div>
       <div>
         <textarea name={'bio'} value={state.bio} onChange={onChange} />
+      </div>
+      <div>
+        <button onClick={onSubmit}>회원가입</button>
       </div>
     </div>
   );
