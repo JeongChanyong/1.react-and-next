@@ -1,4 +1,10 @@
+import useUpdate from '../hooks/useUpdate';
+
+// eslint-disable-next-line react/prop-types
 export default function Controller({ onClickButton }) {
+  useUpdate(() => {
+    console.log('Controller 컴포넌트 업데이트');
+  });
   return (
     <div>
       <button
