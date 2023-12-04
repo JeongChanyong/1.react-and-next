@@ -1,0 +1,14 @@
+.App {
+  width: 400px;
+  margin: 0 auto;
+
+  /*
+  요소 가로 배치  
+  */
+  display: flex;
+  /*
+  요소 세로 배치(방향)
+  */
+  flex-direction: column;
+  gap: 30px;
+}

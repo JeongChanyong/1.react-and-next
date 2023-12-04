@@ -1,0 +1,24 @@
+.TodoEditor {
+  display: flex;
+  gap: 10px;
+}
+
+.TodoEditor input {
+  flex: 1;
+  padding: 15px;
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 5px;
+}
+
+/*
+버튼에 cursor를 pointer를 주면 마우스가 손가락으로 표시
+*/
+
+.TodoEditor button {
+  cursor: pointer;
+  width: 80px;
+  border: none;
+  background-color: tomato;
+  border-radius: 5px;
+  color: white;
+}

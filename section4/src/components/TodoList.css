@@ -1,0 +1,24 @@
+.TodoList {
+}
+
+.TodoList > input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgb(220, 220, 220);
+  padding: 15px 0px;
+  margin-bottom: 20px;
+}
+
+/*
+검색창에 focus시 동작할 css
+*/
+.TodoList > input:focus {
+  outline: none;
+  border-bottom: 1px solid rgb(255, 99, 71);
+}
+
+.TodoList .todos_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
