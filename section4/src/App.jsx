@@ -40,17 +40,42 @@ function App() {
       content, // content: content,
       createDate: new Date().getTime(),
     };
-
     // ...todos 전개 연산자 -> 기존 todos에 담겨 있던 값을 불러오고 newTodo를 통해 원본 데이터에 추가를 한다.
     // 기존의 값 보다 앞에 저장을 하고 싶으면 배열의 위치만 바꾸면 된다.
     setTodos([...todos, newTodo]);
+  };
+
+  const onUpdate = (targetId) => {
+    // setTodos(
+    //   todos.map((todo) => {
+    //     if (todo.id === targetId) {
+    //       // 체크 박스의 id값과 순회한 id 값이 같으면 처리
+    //       return {
+    //         ...todo, // 기존값의 그대로 남겨두고
+    //         isDone: !todo.isDone,
+    //       };
+    //     } else {
+    //       return todo;
+    //     }
+    //   })
+    // );
+    setTodos(
+      todos.map((todo) =>
+        todo.id === targetId ? { ...todo, isDone: !todo.isDone } : todo
+      )
+    );
+  };
+
+  const onDelete = (targetId) => {
+    setTodos(todos.filter((todo) => todo.id !== targetId));
+    console.log(todos);
   };
 
   return (
     <div className="App">
       <Header />
       <TodoEditor onCreate={onCreate} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} onUpdate={onUpdate} onDelete={onDelete} />
     </div>
   );
 }
