@@ -4,6 +4,7 @@ import './TodoEditor.css';
 // eslint-disable-next-line react/prop-types
 export default function TodoEditor({ onCreate }) {
   const [content, setContent] = useState('');
+  
   // input창을 참조하는 변수
   const inputRef = useRef();
 
