@@ -5,6 +5,7 @@ import './TodoEditor.css';
 export default function TodoEditor({ onCreate }) {
   const [content, setContent] = useState('');
   
+
   // input창을 참조하는 변수
   const inputRef = useRef();
 
